@@ -1,0 +1,13 @@
+function sortByPriceAscending(jsonString) {
+  var items = JSON.parse(jsonString);
+  items = items.sort((a, b) =>{ 
+    if(a.price === b.price && a.name < b.name){
+      return -1
+    }else {
+      return a.price - b.price
+    }
+  });
+  return JSON.stringify(items);
+}
+
+console.log(sortByPriceAscending('[{"name":"eggs","price":1},{"name":"coffee","price":9.99},{"name":"rice","price":4.04}]'));
